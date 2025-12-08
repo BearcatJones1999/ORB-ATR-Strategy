@@ -8,11 +8,11 @@ The Opening Range Breakout strategy attempts to exploit the concentrated burst o
 
 This project evaluates and evolves the ORB framework through:
 
-A classic breakout with a fixed 10R profit target
+1. A classic breakout with a fixed 10R profit target
 
-A volatility-adjusted ORB using ATR-based stop-loss sizing
+2. A volatility-adjusted ORB using ATR-based stop-loss sizing
 
-An ATR-based trailing-stop ORB with dynamic intraday risk management
+3. An ATR-based trailing-stop ORB with dynamic intraday risk management
 
 The strategies are tested across a basket of leveraged ETFs and ETNs using Alpaca market data.
 
