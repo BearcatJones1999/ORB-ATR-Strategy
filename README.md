@@ -17,6 +17,7 @@ An ATR-based trailing-stop ORB with dynamic intraday risk management
 The strategies are tested across a basket of leveraged ETFs and ETNs using Alpaca market data.
 
 Strategy Iterations
+
 1. ORB Version 1 — Fixed Stop and 10R Profit Target
 
 This is the baseline ORB model:
@@ -35,6 +36,7 @@ No ATR or trailing behavior
 
 This version is used to benchmark the classic ORB payoff structure.
 
+
 2. ORB Version 2 — ATR-Based Stop, No Profit Cap
 
 This version introduces volatility-adjusted risk sizing:
@@ -52,6 +54,7 @@ Trades exit only by ATR stop or end-of-day
 No profit target
 
 This standardizes risk across assets with different volatility characteristics.
+
 
 3. ORB Version 3 — ATR-Based Trailing Stop
 
