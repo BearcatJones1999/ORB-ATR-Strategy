@@ -2,7 +2,7 @@
 
 An intraday trading strategy that trades breakouts of the first 5-minute bar on U.S. equities and leveraged ETFs, with fixed-R and ATR-based stops, end-of-day exits, and multi-symbol basket construction. Benchmarked against buy-and-hold and evaluated with factor regressions, multiple-testing corrections, slippage sensitivity, and out-of-sample tests.
 
-Developed as a personal research project to build realistic intraday backtesting infrastructure and stress-test a simple breakout rule against common pitfalls: execution costs, parameter tuning, and the false precision of leveraged-ETF Sharpe ratios.
+Developed as a personal research project to build a realistic intraday backtesting infrastructure and stress-test a simple breakout rule against common pitfalls: execution costs, parameter tuning, and the false precision of leveraged-ETF Sharpe ratios.
 
 ## Strategy Construction
 
@@ -103,7 +103,7 @@ Equal-weighting across the basket roughly halves volatility (15% vs 25–37% on 
 | RMW | 0.00 | 0.01 |
 | **α (daily)** | **0.34%** | **5.61** |
 
-Annualized alpha ≈ 85%. All factor loadings are statistically indistinguishable from zero. The strategy does not behave like an equity factor bet — it's closer to an independent return stream. R² ≈ 0.007.
+Annualized alpha ≈ 85%. All factor loadings are statistically indistinguishable from zero. The strategy does not behave like an equity factor bet. It's closer to an independent return stream. R² ≈ 0.007.
 
 ### Multiple-Testing Corrections
 
@@ -128,7 +128,7 @@ Even under Bonferroni's conservative correction, 5 of 9 names retain significanc
 | 3 bps | 24.5% | 0.62 | 775% |
 | 5 bps | **−51.6%** | **−2.72** | **−99.9%** |
 
-**This is the most important table in the analysis.** A 2 bps-per-side assumption — which is realistic for liquid ETFs at market open — keeps the strategy profitable. At 5 bps, the strategy is destroyed. Real-world execution risk is the dominant threat, not signal decay.
+**This is the most important table in the analysis.** A 2 bps-per-side assumption, which is realistic for liquid ETFs at market open keeps the strategy profitable. At 5 bps, the strategy is destroyed. Real-world execution risk is the dominant threat, not signal decay.
 
 ## Honest Caveats
 
@@ -147,7 +147,7 @@ The ATR-ORB basket produces a **5.78 Sharpe** on the test sample. This number de
 6. **No live trading verification**. All results are backtested. Queue position, partial fills, opening auction dynamics, and halts are not modeled.
 
 The point of this project is not to claim a production-ready strategy. It's to:
-- Build realistic intraday backtesting infrastructure
+- Build a realistic intraday backtesting infrastructure
 - Apply correct inference (HAC, FDR corrections, factor-adjusted alpha)
 - Honestly characterize where the edge breaks down (slippage, ETF-specific risk)
 - Practice the discipline of treating impressive-looking results skeptically
@@ -167,7 +167,7 @@ The point of this project is not to claim a production-ready strategy. It's to:
 
 ## Stack
 
-Python, pandas, NumPy, statsmodels, matplotlib. Data from the Alpaca market data API (5-minute and daily bars). API credentials should be loaded from environment variables — never committed to source control.
+Python, pandas, NumPy, statsmodels, matplotlib. Data from the Alpaca market data API (5-minute and daily bars). API credentials should be loaded from environment variables  never committed to source control.
 
 ---
 
